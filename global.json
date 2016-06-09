@@ -1,0 +1,11 @@
+{
+  "projects": [
+    "src",
+    "test",
+    "src/services",
+    "../PhantomNet-Localization/src"
+  ],
+  "sdk": {
+    "version": "1.0.0-preview1-002702"
+  }
+}
