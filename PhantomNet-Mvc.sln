@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E8514AB1-DED2-4CB0-9363-4CEA715256FF}"
 EndProject
@@ -14,13 +14,15 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Mvc", "src\Phant
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{5EFF8C73-9CE3-4F45-968C-0DAFFD020186}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Mvc.Localization", "src\services\PhantomNet.Mvc.Localization\PhantomNet.Mvc.Localization.xproj", "{E36FB26F-52B9-4178-A909-0DBE0DDBC180}"
-EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Mvc.Views", "src\services\PhantomNet.Mvc.Views\PhantomNet.Mvc.Views.xproj", "{0F9E15EB-AC23-4252-AEFB-6BF5FC5AAB2B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dependencies", "dependencies", "{1DE41F8F-5B11-4810-AD67-0E8D8DF59044}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Localization", "..\PhantomNet-Localization\src\PhantomNet.Localization\PhantomNet.Localization.xproj", "{86CFF187-75F6-4F56-9403-CB7861D08E87}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Mvc.Resources", "src\services\PhantomNet.Mvc.Resources\PhantomNet.Mvc.Resources.xproj", "{D9BCFF49-5386-442D-980D-3F8D251B2D77}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Core", "..\PhantomNet-Core\src\PhantomNet.Core\PhantomNet.Core.xproj", "{4CF2E321-D135-486C-9AEF-47DB5A5F9C83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,10 +34,6 @@ Global
 		{D8200871-AE24-4DF9-9297-C106AD424DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8200871-AE24-4DF9-9297-C106AD424DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8200871-AE24-4DF9-9297-C106AD424DA8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E36FB26F-52B9-4178-A909-0DBE0DDBC180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E36FB26F-52B9-4178-A909-0DBE0DDBC180}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E36FB26F-52B9-4178-A909-0DBE0DDBC180}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E36FB26F-52B9-4178-A909-0DBE0DDBC180}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0F9E15EB-AC23-4252-AEFB-6BF5FC5AAB2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0F9E15EB-AC23-4252-AEFB-6BF5FC5AAB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F9E15EB-AC23-4252-AEFB-6BF5FC5AAB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -44,6 +42,14 @@ Global
 		{86CFF187-75F6-4F56-9403-CB7861D08E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86CFF187-75F6-4F56-9403-CB7861D08E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86CFF187-75F6-4F56-9403-CB7861D08E87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9BCFF49-5386-442D-980D-3F8D251B2D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9BCFF49-5386-442D-980D-3F8D251B2D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9BCFF49-5386-442D-980D-3F8D251B2D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9BCFF49-5386-442D-980D-3F8D251B2D77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF2E321-D135-486C-9AEF-47DB5A5F9C83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF2E321-D135-486C-9AEF-47DB5A5F9C83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF2E321-D135-486C-9AEF-47DB5A5F9C83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF2E321-D135-486C-9AEF-47DB5A5F9C83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,8 +57,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D8200871-AE24-4DF9-9297-C106AD424DA8} = {E8514AB1-DED2-4CB0-9363-4CEA715256FF}
 		{5EFF8C73-9CE3-4F45-968C-0DAFFD020186} = {E8514AB1-DED2-4CB0-9363-4CEA715256FF}
-		{E36FB26F-52B9-4178-A909-0DBE0DDBC180} = {5EFF8C73-9CE3-4F45-968C-0DAFFD020186}
 		{0F9E15EB-AC23-4252-AEFB-6BF5FC5AAB2B} = {5EFF8C73-9CE3-4F45-968C-0DAFFD020186}
 		{86CFF187-75F6-4F56-9403-CB7861D08E87} = {1DE41F8F-5B11-4810-AD67-0E8D8DF59044}
+		{D9BCFF49-5386-442D-980D-3F8D251B2D77} = {5EFF8C73-9CE3-4F45-968C-0DAFFD020186}
+		{4CF2E321-D135-486C-9AEF-47DB5A5F9C83} = {1DE41F8F-5B11-4810-AD67-0E8D8DF59044}
 	EndGlobalSection
 EndGlobal

@@ -1,4 +1,4 @@
-﻿namespace PhantomNet.Mvc.Localization
+﻿namespace PhantomNet.Mvc.Resources
 {
     public class CompozrMenuBarResources { }
 }

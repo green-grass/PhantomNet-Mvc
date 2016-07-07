@@ -8,26 +8,30 @@ namespace PhantomNet.Mvc.FileProviders
     {
         public PhysicalFileProviderBase(string defaultVirtualBasePath, IHostingEnvironment env, IOptions<PhysicalFileProviderOptions> optionsAccessor)
         {
-            VirtualBasePath = optionsAccessor?.Value?.VirtualBasePath ?? defaultVirtualBasePath;
+            VirtualBasePath = optionsAccessor.Value.VirtualBasePath ?? defaultVirtualBasePath;
             PhysicalBasePath = env.WebRootPath;
         }
 
-        protected string VirtualBasePath { get; set; }
+        protected string VirtualBasePath { get; }
 
-        protected string PhysicalBasePath { get; set; }
+        protected string PhysicalBasePath { get; }
 
-        protected string GenerateTourVirtualPath(string key) => Path.Combine(VirtualBasePath, key);
+        protected string GenerateVirtualPath(string key)
+            => Path.Combine(VirtualBasePath, key)
+            .Replace(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
 
-        protected string GenerateTourPhysicalPath(string key) => Path.Combine(PhysicalBasePath, GenerateTourVirtualPath(key).TrimStart('~').TrimStart('/'));
+        protected string GeneratePhysicalPath(string key)
+            => Path.Combine(PhysicalBasePath, GenerateVirtualPath(key).TrimStart('~').TrimStart('/'))
+            .Replace(Path.AltDirectorySeparatorChar, Path.DirectorySeparatorChar);
 
         protected string FormatVirtualPath(string key, string physicalPath)
         {
-            return Path.Combine(GenerateTourVirtualPath(key), Path.GetFileName(physicalPath)).Replace('\\', '/');
+            return Path.Combine(GenerateVirtualPath(key), Path.GetFileName(physicalPath)).Replace('\\', '/');
         }
 
         protected string FormatVirtualPath(string key, string relativePath, string physicalPath)
         {
-            return Path.Combine(GenerateTourVirtualPath(key), relativePath, Path.GetFileName(physicalPath)).Replace('\\', '/');
+            return Path.Combine(GenerateVirtualPath(key), relativePath, Path.GetFileName(physicalPath)).Replace('\\', '/');
         }
     }
 }
