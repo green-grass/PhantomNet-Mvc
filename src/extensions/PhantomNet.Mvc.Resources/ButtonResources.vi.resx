@@ -117,13 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FileNotFoundError" xml:space="preserve">
-    <value>The file {0} could not be found.</value>
+  <data name="Cancel" xml:space="preserve">
+    <value>Bỏ Qua</value>
   </data>
-  <data name="InvalidServiceType" xml:space="preserve">
-    <value>Type {0} must derive from {1}&lt;{2}&gt;.</value>
+  <data name="Close" xml:space="preserve">
+    <value>Đóng</value>
   </data>
-  <data name="NoFileToUploadError" xml:space="preserve">
-    <value>There is no file to upload.</value>
+  <data name="Delete" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Cập Nhật</value>
   </data>
 </root>

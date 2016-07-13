@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ToggleMenuBar" xml:space="preserve">
-    <value>Toggle menu bar</value>
+  <data name="All rights reserved." xml:space="preserve">
+    <value>All rights reserved.</value>
+  </data>
+  <data name="Caution" xml:space="preserve">
+    <value>Caution</value>
+  </data>
+  <data name="loading..." xml:space="preserve">
+    <value>loading...</value>
+  </data>
+  <data name="Navigation" xml:space="preserve">
+    <value>Navigation</value>
+  </data>
+  <data name="saving..." xml:space="preserve">
+    <value>saving...</value>
+  </data>
+  <data name="Toggle navigation" xml:space="preserve">
+    <value>Toggle navigation</value>
   </data>
 </root>

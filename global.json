@@ -2,9 +2,8 @@
   "projects": [
     "src",
     "test",
-    "src/services",
-    "../PhantomNet-Core/src",
-    "../PhantomNet-Localization/src"
+    "src/extensions",
+    "../PhantomNet-AspNetCore/src"
   ],
   "sdk": {
     "version": "1.0.0-preview2-003121"
