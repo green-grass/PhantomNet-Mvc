@@ -135,4 +135,7 @@
   <data name="Toggle navigation" xml:space="preserve">
     <value>Toggle navigation</value>
   </data>
+  <data name="{0} (optional)" xml:space="preserve">
+    <value>{0} (optional)</value>
+  </data>
 </root>
