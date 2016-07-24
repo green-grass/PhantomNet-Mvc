@@ -60,11 +60,29 @@ namespace PhantomNet.Mvc {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to A tag with &apos;pn-ng-group-for&apos; attribute must have at least one of the following: &apos;error-css-class&apos; attribute, &apos;bootstrap-style&apos; attribute, an ancestor which is a form tag with &apos;error-css-class&apos; attribute, or an ancestor which is a form tag with &apos;bootstrap-style&apos; attribute..
+        /// </summary>
+        public static string ErrorCssClassRequired {
+            get {
+                return ResourceManager.GetString("ErrorCssClassRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to A tag with &apos;pn-bs-ng-group-for&apos; attribute must have &apos;form-name&apos; attribute or have an ancestor which is a form tag with &apos;pn-ng-name&apos; attribute..
         /// </summary>
         public static string FormNameOrAngularFormRequired {
             get {
                 return ResourceManager.GetString("FormNameOrAngularFormRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to A tag with &apos;pn-ng-group-for&apos; attribute must have at least one of the following: &apos;success-css-class&apos; attribute, &apos;bootstrap-style&apos; attribute, an ancestor which is a form tag with &apos;success-css-class&apos; attribute, or an ancestor which is a form tag with &apos;bootstrap-style&apos; attribute..
+        /// </summary>
+        public static string SuccessCssClassRequired {
+            get {
+                return ResourceManager.GetString("SuccessCssClassRequired", resourceCulture);
             }
         }
     }
