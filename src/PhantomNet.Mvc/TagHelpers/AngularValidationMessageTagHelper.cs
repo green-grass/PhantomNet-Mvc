@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
@@ -14,19 +12,14 @@ namespace PhantomNet.Mvc.TagHelpers
     {
         private const string ValidationForAttributeName = "pn-ng-validation-for";
 
-        public AngularValidationMessageTagHelper(IHtmlGenerator generator)
-        {
-            Generator = generator;
-        }
-
-        protected IHtmlGenerator Generator { get; }
-
-        [HtmlAttributeNotBound]
-        [ViewContext]
-        public ViewContext ViewContext { get; set; }
+        private const string DefaultCondition = ".$touched";
 
         [HtmlAttributeName(ValidationForAttributeName)]
         public ModelExpression For { get; set; }
+
+        public string FormName { get; set; }
+
+        public string Condition { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
@@ -40,25 +33,29 @@ namespace PhantomNet.Mvc.TagHelpers
                 throw new ArgumentNullException(nameof(output));
             }
 
-            var inputTagHelper = new InputTagHelper(Generator) {
-                ViewContext = ViewContext,
-                For = For
-            };
-            var inputTagHelperContext = new TagHelperContext(new TagHelperAttributeList(),
-                                                             new Dictionary<object, object>(),
-                                                             Guid.NewGuid().ToString());
-            var inputTagHelperOutput = new TagHelperOutput("input",
-                                                            new TagHelperAttributeList(),
-                                                            (useCachedResult, encoder) => Task.FromResult(new DefaultTagHelperContent() as TagHelperContent)) {
-                TagMode = TagMode.SelfClosing
-            };
-            inputTagHelper.Process(inputTagHelperContext, inputTagHelperOutput);
+            if (!context.Items.ContainsKey(typeof(AngularFormTagHelper)))
+            {
+                return;
+            }
 
-            var formName = "";
-            var fieldName = "";
+            var formContext = (AngularFormContext)context.Items[typeof(AngularFormTagHelper)];
+            if (!formContext.InputAttributeLists.ContainsKey(For.Name))
+            {
+                return;
+            }
+
+            var inputAttributes = formContext.InputAttributeLists[For.Name];
+
+            var formName = FormName ?? formContext.Name;
+            if (string.IsNullOrWhiteSpace(formName))
+            {
+                throw new InvalidOperationException(Resources.AngularValidationMessageTagHelper_FormNameOrAngularFormRequired);
+            }
+
+            var fieldName = For.Name.ToCamelCase();
             var fieldPath = $"{formName}.{fieldName}";
 
-            var condition = "";
+            var condition = Condition ?? formContext.ValidationCondition ?? DefaultCondition;
             if (condition.StartsWith("."))
             {
                 condition = $"{fieldPath}{condition}";
@@ -77,14 +74,22 @@ namespace PhantomNet.Mvc.TagHelpers
             var tagBuilder = new TagBuilder("span");
             tagBuilder.InnerHtml.AppendHtmlLine(childContent);
 
-            TagHelperAttribute attribute;
-            attribute = inputTagHelperOutput.Attributes["data-val-required"];
-            if (attribute != null)
-            {
-                tagBuilder.InnerHtml.AppendHtmlLine($"<span ng-message=\"required\">{attribute.Value}</span>");
-            }
+            TryAddAttribute(inputAttributes, tagBuilder.InnerHtml, "data-val-required", "required");
+            TryAddAttribute(inputAttributes, tagBuilder.InnerHtml, "data-val-minlength", "minlength");
+            TryAddAttribute(inputAttributes, tagBuilder.InnerHtml, "data-val-maxlength", "maxlength");
+            TryAddAttribute(inputAttributes, tagBuilder.InnerHtml, "data-val-email", "email");
 
             output.Content.AppendHtml(tagBuilder.InnerHtml);
+        }
+
+        private void TryAddAttribute(TagHelperAttributeList attributes, IHtmlContentBuilder html,
+            string inputAttributeName, string angularMessageKey)
+        {
+            var attribute = attributes[inputAttributeName];
+            if (attribute != null)
+            {
+                html.AppendHtmlLine($"<span ng-message=\"{angularMessageKey}\">{attribute.Value}</span>");
+            }
         }
     }
 }

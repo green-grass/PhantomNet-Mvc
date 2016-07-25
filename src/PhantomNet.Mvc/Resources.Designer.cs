@@ -62,27 +62,45 @@ namespace PhantomNet.Mvc {
         /// <summary>
         ///    Looks up a localized string similar to A tag with &apos;pn-ng-group-for&apos; attribute must have at least one of the following: &apos;error-css-class&apos; attribute, &apos;bootstrap-style&apos; attribute, an ancestor which is a form tag with &apos;error-css-class&apos; attribute, or an ancestor which is a form tag with &apos;bootstrap-style&apos; attribute..
         /// </summary>
-        public static string ErrorCssClassRequired {
+        public static string AngularInputGroupTagHelper_ErrorCssClassRequired {
             get {
-                return ResourceManager.GetString("ErrorCssClassRequired", resourceCulture);
+                return ResourceManager.GetString("AngularInputGroupTagHelper_ErrorCssClassRequired", resourceCulture);
             }
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to A tag with &apos;pn-bs-ng-group-for&apos; attribute must have &apos;form-name&apos; attribute or have an ancestor which is a form tag with &apos;pn-ng-name&apos; attribute..
+        ///    Looks up a localized string similar to A tag with &apos;pn-ng-group-for&apos; attribute must have &apos;form-name&apos; attribute or have an ancestor which is a form tag with &apos;pn-ng-name&apos; attribute..
         /// </summary>
-        public static string FormNameOrAngularFormRequired {
+        public static string AngularInputGroupTagHelper_FormNameOrAngularFormRequired {
             get {
-                return ResourceManager.GetString("FormNameOrAngularFormRequired", resourceCulture);
+                return ResourceManager.GetString("AngularInputGroupTagHelper_FormNameOrAngularFormRequired", resourceCulture);
             }
         }
         
         /// <summary>
         ///    Looks up a localized string similar to A tag with &apos;pn-ng-group-for&apos; attribute must have at least one of the following: &apos;success-css-class&apos; attribute, &apos;bootstrap-style&apos; attribute, an ancestor which is a form tag with &apos;success-css-class&apos; attribute, or an ancestor which is a form tag with &apos;bootstrap-style&apos; attribute..
         /// </summary>
-        public static string SuccessCssClassRequired {
+        public static string AngularInputGroupTagHelper_SuccessCssClassRequired {
             get {
-                return ResourceManager.GetString("SuccessCssClassRequired", resourceCulture);
+                return ResourceManager.GetString("AngularInputGroupTagHelper_SuccessCssClassRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to A tag with &apos;pn-ng-submit&apos; attribute must have &apos;form-name&apos; attribute or have an ancestor which is a form tag with &apos;pn-ng-name&apos; attribute..
+        /// </summary>
+        public static string AngularSubmitButtonTagHelper_FormNameOrAngularFormRequired {
+            get {
+                return ResourceManager.GetString("AngularSubmitButtonTagHelper_FormNameOrAngularFormRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to A tag with &apos;pn-ng-validation-for&apos; attribute must have &apos;form-name&apos; attribute or have an ancestor which is a form tag with &apos;pn-ng-name&apos; attribute..
+        /// </summary>
+        public static string AngularValidationMessageTagHelper_FormNameOrAngularFormRequired {
+            get {
+                return ResourceManager.GetString("AngularValidationMessageTagHelper_FormNameOrAngularFormRequired", resourceCulture);
             }
         }
     }

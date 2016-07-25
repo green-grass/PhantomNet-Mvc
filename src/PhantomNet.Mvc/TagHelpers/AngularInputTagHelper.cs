@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.TagHelpers;
+﻿using System;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
@@ -13,6 +15,14 @@ namespace PhantomNet.Mvc.TagHelpers
 
         public AngularInputTagHelper(IHtmlGenerator generator) : base(generator) { }
 
+        public override int Order
+        {
+            get
+            {
+                return -1000;
+            }
+        }
+
         [HtmlAttributeName(ForAttributeName)]
         public ModelExpression AngularFor
         {
@@ -26,9 +36,7 @@ namespace PhantomNet.Mvc.TagHelpers
         {
             base.Process(context, output);
 
-            TagHelperAttribute attribute;
-
-            attribute = output.Attributes["name"];
+            var attribute = output.Attributes["name"];
             if (attribute != null)
             {
                 var name = attribute.Value.ToString().ToCamelCase();
@@ -50,22 +58,24 @@ namespace PhantomNet.Mvc.TagHelpers
                 output.Attributes.Add("ng-model", ngModel);
             }
 
-            attribute = output.Attributes["data-val-required"];
-            if (attribute != null)
-            {
-                output.Attributes.Add("required", null);
-            }
+            TryAddAttribute(output.Attributes, "data-val-required", "required", x => null);
+            TryAddAttribute(output.Attributes, "data-val-minlength-min", "ng-minlength", x => x.Value);
+            TryAddAttribute(output.Attributes, "data-val-maxlength-max", "ng-maxlength", x => x.Value);
 
-            attribute = output.Attributes["data-val-minlength-min"];
-            if (attribute != null)
+            if (context.Items.ContainsKey(typeof(AngularFormTagHelper)))
             {
-                output.Attributes.Add("ng-minlength", attribute.Value);
+                ((AngularFormContext)context.Items[typeof(AngularFormTagHelper)]).InputAttributeLists.Add(For.Name, new TagHelperAttributeList(output.Attributes.ToList()));
             }
+        }
 
-            attribute = output.Attributes["data-val-maxlength-max"];
+        private void TryAddAttribute(TagHelperAttributeList attributes,
+            string inputAttributeName, string angularAttributeName,
+            Func<TagHelperAttribute, object> GetValue)
+        {
+            var attribute = attributes[inputAttributeName];
             if (attribute != null)
             {
-                output.Attributes.Add("ng-maxlength", attribute.Value);
+                attributes.Add(angularAttributeName, GetValue(attribute));
             }
         }
     }

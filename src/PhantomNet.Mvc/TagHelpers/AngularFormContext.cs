@@ -1,4 +1,7 @@
-﻿namespace PhantomNet.Mvc.TagHelpers
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Razor.TagHelpers;
+
+namespace PhantomNet.Mvc.TagHelpers
 {
     public class AngularFormContext
     {
@@ -11,5 +14,8 @@
         public string ValidationErrorCssClass { get; set; }
 
         public bool BootstrapStyle { get; set; }
+
+        public IDictionary<string, TagHelperAttributeList> InputAttributeLists { get; }
+            = new Dictionary<string, TagHelperAttributeList>();
     }
 }

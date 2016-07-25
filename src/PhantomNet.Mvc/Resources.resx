@@ -117,13 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ErrorCssClassRequired" xml:space="preserve">
+  <data name="AngularInputGroupTagHelper_ErrorCssClassRequired" xml:space="preserve">
     <value>A tag with 'pn-ng-group-for' attribute must have at least one of the following: 'error-css-class' attribute, 'bootstrap-style' attribute, an ancestor which is a form tag with 'error-css-class' attribute, or an ancestor which is a form tag with 'bootstrap-style' attribute.</value>
   </data>
-  <data name="FormNameOrAngularFormRequired" xml:space="preserve">
-    <value>A tag with 'pn-bs-ng-group-for' attribute must have 'form-name' attribute or have an ancestor which is a form tag with 'pn-ng-name' attribute.</value>
+  <data name="AngularInputGroupTagHelper_FormNameOrAngularFormRequired" xml:space="preserve">
+    <value>A tag with 'pn-ng-group-for' attribute must have 'form-name' attribute or have an ancestor which is a form tag with 'pn-ng-name' attribute.</value>
   </data>
-  <data name="SuccessCssClassRequired" xml:space="preserve">
+  <data name="AngularInputGroupTagHelper_SuccessCssClassRequired" xml:space="preserve">
     <value>A tag with 'pn-ng-group-for' attribute must have at least one of the following: 'success-css-class' attribute, 'bootstrap-style' attribute, an ancestor which is a form tag with 'success-css-class' attribute, or an ancestor which is a form tag with 'bootstrap-style' attribute.</value>
+  </data>
+  <data name="AngularSubmitButtonTagHelper_FormNameOrAngularFormRequired" xml:space="preserve">
+    <value>A tag with 'pn-ng-submit' attribute must have 'form-name' attribute or have an ancestor which is a form tag with 'pn-ng-name' attribute.</value>
+  </data>
+  <data name="AngularValidationMessageTagHelper_FormNameOrAngularFormRequired" xml:space="preserve">
+    <value>A tag with 'pn-ng-validation-for' attribute must have 'form-name' attribute or have an ancestor which is a form tag with 'pn-ng-name' attribute.</value>
   </data>
 </root>

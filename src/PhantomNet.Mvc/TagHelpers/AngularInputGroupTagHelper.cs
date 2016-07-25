@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace PhantomNet.Mvc.TagHelpers
 {
-    [HtmlTargetElement(Attributes = GroupForAttributeName + "," + SuccessCssClassAttributeName + "," + ErrorCssClassAttributeName)]
-    [HtmlTargetElement(Attributes = GroupForAttributeName + "," + BootstrapStyleAttributeName)]
-    [HtmlTargetElement(Attributes = GroupForAttributeName)]
+    [HtmlTargetElement("div", Attributes = ForAttributeName + "," + SuccessCssClassAttributeName + "," + ErrorCssClassAttributeName)]
+    [HtmlTargetElement("div", Attributes = ForAttributeName + "," + BootstrapStyleAttributeName)]
+    [HtmlTargetElement("div", Attributes = ForAttributeName)]
     public class AngularInputGroupTagHelper : TagHelper
     {
-        private const string GroupForAttributeName = "pn-ng-group-for";
+        private const string ForAttributeName = "pn-ng-group-for";
         private const string BootstrapStyleAttributeName = "bootstrap-style";
         private const string SuccessCssClassAttributeName = "success-css-class";
         private const string ErrorCssClassAttributeName = "error-css-class";
@@ -18,8 +18,8 @@ namespace PhantomNet.Mvc.TagHelpers
         private const string BootstrapSuccessCssClass = "has-success";
         private const string BootstrapErrorCssClass = "has-error";
 
-        [HtmlAttributeName(GroupForAttributeName)]
-        public virtual ModelExpression GroupFor { get; set; }
+        [HtmlAttributeName(ForAttributeName)]
+        public virtual ModelExpression For { get; set; }
 
         public string FormName { get; set; }
 
@@ -50,10 +50,10 @@ namespace PhantomNet.Mvc.TagHelpers
             var formName = FormName ?? formContext?.Name;
             if (string.IsNullOrWhiteSpace(formName))
             {
-                throw new InvalidOperationException(Resources.FormNameOrAngularFormRequired);
+                throw new InvalidOperationException(Resources.AngularInputGroupTagHelper_FormNameOrAngularFormRequired);
             }
 
-            var fieldName = GroupFor.Metadata.GetDisplayName().ToCamelCase();
+            var fieldName = For.Name.ToCamelCase();
             var fieldPath = $"{formName}.{fieldName}";
 
             var condition = Condition ?? formContext?.ValidationCondition ?? DefaultCondition;
@@ -79,12 +79,12 @@ namespace PhantomNet.Mvc.TagHelpers
 
             if (string.IsNullOrWhiteSpace(successCssClass))
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException(Resources.AngularInputGroupTagHelper_SuccessCssClassRequired);
             }
 
             if (string.IsNullOrWhiteSpace(errorCssClass))
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException(Resources.AngularInputGroupTagHelper_ErrorCssClassRequired);
             }
 
             var ngClass = $"{{ '{successCssClass}': {condition} && {fieldPath}.$valid, '{errorCssClass}': {condition} && {fieldPath}.$invalid }}";

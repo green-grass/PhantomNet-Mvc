@@ -117,25 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="All rights reserved." xml:space="preserve">
-    <value>Bảo lưu mọi quyền hạn.</value>
-  </data>
-  <data name="Caution" xml:space="preserve">
-    <value>Cảnh Báo</value>
-  </data>
-  <data name="loading..." xml:space="preserve">
-    <value>đang tải...</value>
-  </data>
   <data name="Navigation" xml:space="preserve">
     <value>Menu</value>
   </data>
-  <data name="saving..." xml:space="preserve">
-    <value>đang lưu...</value>
-  </data>
   <data name="Toggle navigation" xml:space="preserve">
     <value>Đóng mở menu</value>
-  </data>
-  <data name="{0} (optional)" xml:space="preserve">
-    <value>{0} (tùy chọn)</value>
   </data>
 </root>

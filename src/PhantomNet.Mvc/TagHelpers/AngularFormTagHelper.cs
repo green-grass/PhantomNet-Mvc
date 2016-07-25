@@ -50,6 +50,7 @@ namespace PhantomNet.Mvc.TagHelpers
             output.Attributes.RemoveAll(ValidationErrorCssClassAttributeName);
 
             output.Attributes.SetAttribute("name", Name);
+            output.Attributes.SetAttribute("novalidate", null);
         }
     }
 }
