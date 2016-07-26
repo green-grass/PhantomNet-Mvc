@@ -1,5 +1,15 @@
 {
+  "title": "PhantomNet.AspNetCore.Mvc.Views",
+  "copyright": "Green Grass",
+  "description": "PhantomNet.AspNetCore.Mvc.Views class library",
+  "language": "en",
   "version": "1.0.0-beta-*",
+  "authors": [ "Minh Nguyen" ],
+
+  "packOptions": {
+    "licenseUrl": "https://github.com/green-grass/PhantomNet-Mvc/blob/master/LICENSE",
+    "projectUrl": "https://github.com/green-grass/PhantomNet-Mvc"
+  },
 
   "dependencies": {
     "Microsoft.AspNetCore.Mvc.Razor": "1.0.0",
