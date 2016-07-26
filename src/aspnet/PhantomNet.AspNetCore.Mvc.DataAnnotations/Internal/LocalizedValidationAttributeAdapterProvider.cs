@@ -31,6 +31,10 @@ namespace Microsoft.AspNetCore.Mvc.DataAnnotations.Internal
             {
                 adapter = new MaxLengthAttributeAdapter((MaxLengthAttribute)attribute, stringLocalizer);
             }
+            else if (type == typeof(LocalizedEmailAddressAttribute))
+            {
+                adapter = new DataTypeAttributeAdapter((DataTypeAttribute)attribute, "data-val-email", stringLocalizer);
+            }
             else
             {
                 adapter = _internalProvider.GetAttributeAdapter(attribute, stringLocalizer);

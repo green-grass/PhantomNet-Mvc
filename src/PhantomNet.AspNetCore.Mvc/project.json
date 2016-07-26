@@ -1,4 +1,4 @@
-﻿{
+{
   "title": "PhantomNet.AspNetCore.Mvc",
   "copyright": "Green Grass",
   "description": "PhantomNet.AspNetCore.Mvc class library",
@@ -16,8 +16,9 @@
     "Microsoft.AspNetCore.Mvc.Razor": "1.0.0",
     "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",
     "NETStandard.Library": "1.6.0",
+    "PhantomNet.AspNetCore.Mvc.DataAnnotations": "1.0.0-*",
     "PhantomNet.Core": "1.1.0-beta-*",
-    "PhantomNet.Extensions.Localization": "1.0.0-beta-*"
+    "PhantomNet.Extensions.Localization": "1.0.0-*"
   },
 
   "frameworks": {
