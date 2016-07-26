@@ -1,0 +1,21 @@
+﻿@using PhantomNet.AspNetCore.Mvc.ViewComponents.Compozr
+@inject MvcHelper MvcHelper
+
+@if (MvcHelper.Compozing)
+{
+    try
+    {
+        @await Component.InvokeAsync(MvcHelper.CurrentActionCompozrHeadViewComponentName)
+    }
+    catch (InvalidOperationException e)
+    {
+        if (e.Message == $"A view component named '{MvcHelper.CurrentActionCompozrHeadViewComponentName}' could not be found.")
+        {
+            @await Component.InvokeAsync(typeof(EmptyCompozrHeadViewComponent))
+        }
+        else
+        {
+            throw e;
+        }
+    }
+}
