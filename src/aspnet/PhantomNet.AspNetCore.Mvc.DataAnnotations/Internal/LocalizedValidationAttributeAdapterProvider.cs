@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.DataAnnotations.Internal;
 using Microsoft.Extensions.Localization;
 
-namespace PhantomNet.AspNetCore.Mvc.DataAnnotations.Internal
+namespace Microsoft.AspNetCore.Mvc.DataAnnotations.Internal
 {
     public class LocalizedValidationAttributeAdapterProvider : IValidationAttributeAdapterProvider
     {
@@ -15,8 +10,33 @@ namespace PhantomNet.AspNetCore.Mvc.DataAnnotations.Internal
 
         public IAttributeAdapter GetAttributeAdapter(ValidationAttribute attribute, IStringLocalizer stringLocalizer)
         {
-            var adapter = _internalProvider.GetAttributeAdapter(attribute, stringLocalizer);
-            throw new NotImplementedException();
+            if (attribute == null)
+            {
+                throw new ArgumentNullException(nameof(attribute));
+            }
+
+            IAttributeAdapter adapter;
+
+            var type = attribute.GetType();
+
+            if (type == typeof(LocalizedRequiredAttribute))
+            {
+                adapter = new RequiredAttributeAdapter((RequiredAttribute)attribute, stringLocalizer);
+            }
+            else if (type == typeof(LocalizedMinLengthAttribute))
+            {
+                adapter = new MinLengthAttributeAdapter((MinLengthAttribute)attribute, stringLocalizer);
+            }
+            else if (type == typeof(LocalizedMaxLengthAttribute))
+            {
+                adapter = new MaxLengthAttributeAdapter((MaxLengthAttribute)attribute, stringLocalizer);
+            }
+            else
+            {
+                adapter = _internalProvider.GetAttributeAdapter(attribute, stringLocalizer);
+            }
+
+            return adapter;
         }
     }
 }

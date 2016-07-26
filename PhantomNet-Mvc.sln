@@ -7,30 +7,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E8514AB1-DED
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5DC68DB5-6918-4448-89B2-76289C4FFB07}"
 	ProjectSection(SolutionItems) = preProject
+		Build.ps1 = Build.ps1
 		global.json = global.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extensions", "extensions", "{5EFF8C73-9CE3-4F45-968C-0DAFFD020186}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dependencies", "dependencies", "{1DE41F8F-5B11-4810-AD67-0E8D8DF59044}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhantomNet-Localization", "PhantomNet-Localization", "{2C1371AC-1238-473C-A82E-00DC80AEBE35}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{721AEF8F-C321-4BD9-9EB8-6EE7EF48083B}"
-EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.Mvc", "src\PhantomNet.AspNetCore.Mvc\PhantomNet.AspNetCore.Mvc.xproj", "{5CC3279C-7471-49C0-9820-04F3BB79F0EB}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Extensions.Localization", "..\PhantomNet-Localization\src\aspnet\PhantomNet.Extensions.Localization\PhantomNet.Extensions.Localization.xproj", "{7CD2BBDF-FE6D-4AA2-8B36-B02E9652E730}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aspnet", "aspnet", "{3EB1557D-0C58-4CF1-A583-01AEFCD9C8E7}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.Mvc.SharedStrings", "src\PhantomNet.AspNetCore.Mvc.SharedStrings\PhantomNet.AspNetCore.Mvc.SharedStrings.xproj", "{6A528BEC-73AB-4991-A194-4C23AA0556EA}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.Mvc.Views", "src\extensions\PhantomNet.AspNetCore.Mvc.Views\PhantomNet.AspNetCore.Mvc.Views.xproj", "{BBD0D73A-46E6-4EA8-AAC1-C245E64453D2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aspnet", "aspnet", "{0966BBD3-D1CF-493B-AF00-83DF806FD927}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.Mvc.DataAnnotations", "src\aspnet\PhantomNet.AspNetCore.Mvc.DataAnnotations\PhantomNet.AspNetCore.Mvc.DataAnnotations.xproj", "{0532C696-43F7-4BEC-A572-C8218AC7A3D5}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.Mvc.SharedStrings", "src\extensions\PhantomNet.AspNetCore.Mvc.SharedStrings\PhantomNet.AspNetCore.Mvc.SharedStrings.xproj", "{6A528BEC-73AB-4991-A194-4C23AA0556EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,14 +33,6 @@ Global
 		{5CC3279C-7471-49C0-9820-04F3BB79F0EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CC3279C-7471-49C0-9820-04F3BB79F0EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CC3279C-7471-49C0-9820-04F3BB79F0EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7CD2BBDF-FE6D-4AA2-8B36-B02E9652E730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7CD2BBDF-FE6D-4AA2-8B36-B02E9652E730}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7CD2BBDF-FE6D-4AA2-8B36-B02E9652E730}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7CD2BBDF-FE6D-4AA2-8B36-B02E9652E730}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A528BEC-73AB-4991-A194-4C23AA0556EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A528BEC-73AB-4991-A194-4C23AA0556EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A528BEC-73AB-4991-A194-4C23AA0556EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A528BEC-73AB-4991-A194-4C23AA0556EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BBD0D73A-46E6-4EA8-AAC1-C245E64453D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BBD0D73A-46E6-4EA8-AAC1-C245E64453D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBD0D73A-46E6-4EA8-AAC1-C245E64453D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -58,20 +41,20 @@ Global
 		{0532C696-43F7-4BEC-A572-C8218AC7A3D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0532C696-43F7-4BEC-A572-C8218AC7A3D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0532C696-43F7-4BEC-A572-C8218AC7A3D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A528BEC-73AB-4991-A194-4C23AA0556EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A528BEC-73AB-4991-A194-4C23AA0556EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A528BEC-73AB-4991-A194-4C23AA0556EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A528BEC-73AB-4991-A194-4C23AA0556EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5EFF8C73-9CE3-4F45-968C-0DAFFD020186} = {E8514AB1-DED2-4CB0-9363-4CEA715256FF}
-		{2C1371AC-1238-473C-A82E-00DC80AEBE35} = {1DE41F8F-5B11-4810-AD67-0E8D8DF59044}
-		{721AEF8F-C321-4BD9-9EB8-6EE7EF48083B} = {2C1371AC-1238-473C-A82E-00DC80AEBE35}
 		{5CC3279C-7471-49C0-9820-04F3BB79F0EB} = {E8514AB1-DED2-4CB0-9363-4CEA715256FF}
-		{7CD2BBDF-FE6D-4AA2-8B36-B02E9652E730} = {3EB1557D-0C58-4CF1-A583-01AEFCD9C8E7}
-		{3EB1557D-0C58-4CF1-A583-01AEFCD9C8E7} = {721AEF8F-C321-4BD9-9EB8-6EE7EF48083B}
-		{6A528BEC-73AB-4991-A194-4C23AA0556EA} = {E8514AB1-DED2-4CB0-9363-4CEA715256FF}
 		{BBD0D73A-46E6-4EA8-AAC1-C245E64453D2} = {5EFF8C73-9CE3-4F45-968C-0DAFFD020186}
 		{0966BBD3-D1CF-493B-AF00-83DF806FD927} = {E8514AB1-DED2-4CB0-9363-4CEA715256FF}
 		{0532C696-43F7-4BEC-A572-C8218AC7A3D5} = {0966BBD3-D1CF-493B-AF00-83DF806FD927}
+		{6A528BEC-73AB-4991-A194-4C23AA0556EA} = {5EFF8C73-9CE3-4F45-968C-0DAFFD020186}
 	EndGlobalSection
 EndGlobal

@@ -1,13 +1,13 @@
 ﻿{
-  "version": "1.0.0-*",
+  "version": "1.0.0-beta-*",
 
   "dependencies": {
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Mvc.Razor": "1.0.0",
     "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",
     "NETStandard.Library": "1.6.0",
-    "PhantomNet.Core": "1.1.0-beta-0032",
-    "PhantomNet.Extensions.Localization": "1.0.0-*"
+    "PhantomNet.Core": "1.1.0-beta-*",
+    "PhantomNet.Extensions.Localization": "1.0.0-beta-*"
   },
 
   "frameworks": {
