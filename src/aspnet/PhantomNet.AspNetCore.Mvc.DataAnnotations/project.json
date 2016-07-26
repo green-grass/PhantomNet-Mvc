@@ -4,7 +4,7 @@
   "dependencies": {
     "Microsoft.AspNetCore.Mvc.DataAnnotations": "1.0.0",
     "NETStandard.Library": "1.6.0",
-    "PhantomNet.ComponentModel.Annotations": "1.1.0-beta-*"
+    "PhantomNet.ComponentModel.Annotations": "1.0.3-*"
   },
 
   "frameworks": {

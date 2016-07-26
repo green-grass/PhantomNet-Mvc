@@ -17,7 +17,7 @@
     "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",
     "NETStandard.Library": "1.6.0",
     "PhantomNet.AspNetCore.Mvc.DataAnnotations": "1.0.0-*",
-    "PhantomNet.Core": "1.1.0-beta-*",
+    "PhantomNet.Core": "1.0.3-*",
     "PhantomNet.Extensions.Localization": "1.0.0-*"
   },
 
