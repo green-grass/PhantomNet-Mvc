@@ -9,6 +9,7 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
     public class AngularSubmitButtonTagHelper : TagHelper
     {
         private const string SubmitAttributeName = "pn-ng-submit";
+        private const string FormNameAttributeName = "form-name";
 
         public string FormName { get; set; }
 
@@ -33,7 +34,8 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
             var formName = FormName ?? formContext.Name;
             if (string.IsNullOrWhiteSpace(formName))
             {
-                throw new InvalidOperationException(Strings.AngularSubmitButtonTagHelper_FormNameOrAngularFormRequired);
+                throw new InvalidOperationException(Resources.FormatFormNameOrAngularFormRequired(
+                    SubmitAttributeName, FormNameAttributeName, AngularFormTagHelper.NameAttributeName));
             }
 
             output.Attributes.Add("ng-disabled", $"{formName}.$invalid");

@@ -11,6 +11,7 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
     public class AngularValidationMessageTagHelper : TagHelper
     {
         private const string ValidationForAttributeName = "pn-ng-validation-for";
+        private const string FormNameAttributeName = "form-name";
 
         private const string DefaultCondition = ".$touched";
 
@@ -49,7 +50,8 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
             var formName = FormName ?? formContext.Name;
             if (string.IsNullOrWhiteSpace(formName))
             {
-                throw new InvalidOperationException(Strings.AngularValidationMessageTagHelper_FormNameOrAngularFormRequired);
+                throw new InvalidOperationException(Resources.FormatFormNameOrAngularFormRequired(
+                    ValidationForAttributeName, FormNameAttributeName, AngularFormTagHelper.NameAttributeName));
             }
 
             var fieldName = For.Name.ToCamelCase();

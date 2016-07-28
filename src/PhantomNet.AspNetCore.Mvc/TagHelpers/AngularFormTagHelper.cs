@@ -8,10 +8,10 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
     [HtmlTargetElement("form", Attributes = NameAttributeName + "," + ValidationSuccessCssClassAttributeName + "," + ValidationErrorCssClassAttributeName)]
     public class AngularFormTagHelper : TagHelper
     {
-        private const string NameAttributeName = "pn-ng-name";
-        private const string BootstrapStyleAttributeName = "bootstrap-style";
-        private const string ValidationSuccessCssClassAttributeName = "validation-success-css-class";
-        private const string ValidationErrorCssClassAttributeName = "validation-error-css-class";
+        internal const string NameAttributeName = "pn-ng-name";
+        internal const string BootstrapStyleAttributeName = "bootstrap-style";
+        internal const string ValidationSuccessCssClassAttributeName = "validation-success-css-class";
+        internal const string ValidationErrorCssClassAttributeName = "validation-error-css-class";
 
         [HtmlAttributeName(NameAttributeName)]
         public string Name { get; set; }

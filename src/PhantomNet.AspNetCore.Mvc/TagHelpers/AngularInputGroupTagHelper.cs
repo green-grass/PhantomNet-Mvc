@@ -10,6 +10,7 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
     public class AngularInputGroupTagHelper : TagHelper
     {
         private const string ForAttributeName = "pn-ng-group-for";
+        private const string FormNameAttributeName = "form-name";
         private const string BootstrapStyleAttributeName = "bootstrap-style";
         private const string SuccessCssClassAttributeName = "success-css-class";
         private const string ErrorCssClassAttributeName = "error-css-class";
@@ -50,7 +51,8 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
             var formName = FormName ?? formContext?.Name;
             if (string.IsNullOrWhiteSpace(formName))
             {
-                throw new InvalidOperationException(Strings.AngularInputGroupTagHelper_FormNameOrAngularFormRequired);
+                throw new InvalidOperationException(Resources.FormatFormNameOrAngularFormRequired(
+                    ForAttributeName, FormNameAttributeName, AngularFormTagHelper.NameAttributeName));
             }
 
             var fieldName = For.Name.ToCamelCase();
@@ -79,12 +81,16 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
 
             if (string.IsNullOrWhiteSpace(successCssClass))
             {
-                throw new InvalidOperationException(Strings.AngularInputGroupTagHelper_SuccessCssClassRequired);
+                throw new InvalidOperationException(Resources.FormatAngularInputGroupTagHelper_CssClassRequired(
+                    ForAttributeName, SuccessCssClassAttributeName, BootstrapStyleAttributeName,
+                    AngularFormTagHelper.ValidationSuccessCssClassAttributeName, AngularFormTagHelper.BootstrapStyleAttributeName));
             }
 
             if (string.IsNullOrWhiteSpace(errorCssClass))
             {
-                throw new InvalidOperationException(Strings.AngularInputGroupTagHelper_ErrorCssClassRequired);
+                throw new InvalidOperationException(Resources.FormatAngularInputGroupTagHelper_CssClassRequired(
+                    ForAttributeName, ErrorCssClassAttributeName, BootstrapStyleAttributeName,
+                    AngularFormTagHelper.ValidationErrorCssClassAttributeName, AngularFormTagHelper.BootstrapStyleAttributeName));
             }
 
             var ngClass = $"{{ '{successCssClass}': {condition} && {fieldPath}.$valid, '{errorCssClass}': {condition} && {fieldPath}.$invalid }}";
