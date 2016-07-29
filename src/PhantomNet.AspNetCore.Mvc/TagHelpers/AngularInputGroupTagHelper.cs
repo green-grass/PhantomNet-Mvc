@@ -51,7 +51,7 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
             var formName = FormName ?? formContext?.Name;
             if (string.IsNullOrWhiteSpace(formName))
             {
-                throw new InvalidOperationException(Resources.FormatFormNameOrAngularFormRequired(
+                throw new InvalidOperationException(Strings.FormatFormNameOrAngularFormRequired(
                     ForAttributeName, FormNameAttributeName, AngularFormTagHelper.NameAttributeName));
             }
 
@@ -81,14 +81,14 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
 
             if (string.IsNullOrWhiteSpace(successCssClass))
             {
-                throw new InvalidOperationException(Resources.FormatAngularInputGroupTagHelper_CssClassRequired(
+                throw new InvalidOperationException(Strings.FormatAngularInputGroupTagHelper_CssClassRequired(
                     ForAttributeName, SuccessCssClassAttributeName, BootstrapStyleAttributeName,
                     AngularFormTagHelper.ValidationSuccessCssClassAttributeName, AngularFormTagHelper.BootstrapStyleAttributeName));
             }
 
             if (string.IsNullOrWhiteSpace(errorCssClass))
             {
-                throw new InvalidOperationException(Resources.FormatAngularInputGroupTagHelper_CssClassRequired(
+                throw new InvalidOperationException(Strings.FormatAngularInputGroupTagHelper_CssClassRequired(
                     ForAttributeName, ErrorCssClassAttributeName, BootstrapStyleAttributeName,
                     AngularFormTagHelper.ValidationErrorCssClassAttributeName, AngularFormTagHelper.BootstrapStyleAttributeName));
             }

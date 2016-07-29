@@ -50,7 +50,7 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
             var formName = FormName ?? formContext.Name;
             if (string.IsNullOrWhiteSpace(formName))
             {
-                throw new InvalidOperationException(Resources.FormatFormNameOrAngularFormRequired(
+                throw new InvalidOperationException(Strings.FormatFormNameOrAngularFormRequired(
                     ValidationForAttributeName, FormNameAttributeName, AngularFormTagHelper.NameAttributeName));
             }
 

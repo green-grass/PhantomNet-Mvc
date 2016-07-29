@@ -5,10 +5,10 @@ namespace PhantomNet.AspNetCore.Mvc
     using System.Reflection;
     using System.Resources;
 
-    internal static class Resources
+    internal static class Strings
     {
         private static readonly ResourceManager _resourceManager
-            = new ResourceManager("PhantomNet.AspNetCore.Mvc.Resources", typeof(Resources).GetTypeInfo().Assembly);
+            = new ResourceManager("PhantomNet.AspNetCore.Mvc.Strings", typeof(Strings).GetTypeInfo().Assembly);
 
         /// <summary>
         /// A tag with '{0}' attribute must have at least one of the following: '{1}' attribute, '{2}' attribute, an ancestor which is a form tag with '{3}' attribute, or an ancestor which is a form tag with '{4}' attribute.
