@@ -12,17 +12,15 @@
   },
 
   "dependencies": {
-    "Microsoft.AspNetCore.Mvc.Razor": "1.0.0",
-    "Microsoft.Extensions.FileProviders.Embedded": "1.0.0",
-    "NETStandard.Library": "1.6.0",
+    "Microsoft.AspNetCore.Mvc.Razor": "1.1.2",
+    "Microsoft.Extensions.FileProviders.Embedded": "1.1.0",
+    "NETStandard.Library": "1.6.1",
     "PhantomNet.AspNetCore.Mvc": "1.0.0-*",
     "PhantomNet.AspNetCore.Mvc.SharedStrings": "1.0.0-*"
   },
 
   "frameworks": {
-    "netstandard1.6": {
-      "imports": "dnxcore50"
-    }
+    "netstandard1.6": {}
   },
 
   "buildOptions": {

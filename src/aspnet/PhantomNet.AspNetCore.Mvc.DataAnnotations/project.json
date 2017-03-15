@@ -2,14 +2,12 @@
   "version": "1.0.0-beta-*",
 
   "dependencies": {
-    "Microsoft.AspNetCore.Mvc.DataAnnotations": "1.0.0",
-    "NETStandard.Library": "1.6.0",
+    "Microsoft.AspNetCore.Mvc.DataAnnotations": "1.1.2",
+    "NETStandard.Library": "1.6.1",
     "PhantomNet.ComponentModel.Annotations": "1.0.3-*"
   },
 
   "frameworks": {
-    "netstandard1.6": {
-      "imports": "dnxcore50"
-    }
+    "netstandard1.6": {}
   }
 }

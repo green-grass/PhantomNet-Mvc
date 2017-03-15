@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using PhantomNet.AspNetCore.Mvc.Properties;
 
 namespace PhantomNet.AspNetCore.Mvc.TagHelpers
 {
@@ -50,7 +51,7 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
             var formName = FormName ?? formContext.Name;
             if (string.IsNullOrWhiteSpace(formName))
             {
-                throw new InvalidOperationException(Strings.FormatFormNameOrAngularFormRequired(
+                throw new InvalidOperationException(string.Format(Strings.FormNameOrAngularFormRequired,
                     ValidationForAttributeName, FormNameAttributeName, AngularFormTagHelper.NameAttributeName));
             }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using PhantomNet.AspNetCore.Mvc.Properties;
 
 namespace PhantomNet.AspNetCore.Mvc.TagHelpers
 {
@@ -51,7 +52,7 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
             var formName = FormName ?? formContext?.Name;
             if (string.IsNullOrWhiteSpace(formName))
             {
-                throw new InvalidOperationException(Strings.FormatFormNameOrAngularFormRequired(
+                throw new InvalidOperationException(string.Format(Strings.FormNameOrAngularFormRequired,
                     ForAttributeName, FormNameAttributeName, AngularFormTagHelper.NameAttributeName));
             }
 
@@ -81,14 +82,14 @@ namespace PhantomNet.AspNetCore.Mvc.TagHelpers
 
             if (string.IsNullOrWhiteSpace(successCssClass))
             {
-                throw new InvalidOperationException(Strings.FormatAngularInputGroupTagHelper_CssClassRequired(
+                throw new InvalidOperationException(string.Format(Strings.AngularInputGroupTagHelper_CssClassRequired,
                     ForAttributeName, SuccessCssClassAttributeName, BootstrapStyleAttributeName,
                     AngularFormTagHelper.ValidationSuccessCssClassAttributeName, AngularFormTagHelper.BootstrapStyleAttributeName));
             }
 
             if (string.IsNullOrWhiteSpace(errorCssClass))
             {
-                throw new InvalidOperationException(Strings.FormatAngularInputGroupTagHelper_CssClassRequired(
+                throw new InvalidOperationException(string.Format(Strings.AngularInputGroupTagHelper_CssClassRequired,
                     ForAttributeName, ErrorCssClassAttributeName, BootstrapStyleAttributeName,
                     AngularFormTagHelper.ValidationErrorCssClassAttributeName, AngularFormTagHelper.BootstrapStyleAttributeName));
             }

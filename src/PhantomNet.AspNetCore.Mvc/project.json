@@ -12,18 +12,16 @@
   },
 
   "dependencies": {
-    "Microsoft.AspNetCore.Mvc": "1.0.0",
-    "Microsoft.AspNetCore.Mvc.Razor": "1.0.0",
-    "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",
-    "NETStandard.Library": "1.6.0",
+    "Microsoft.AspNetCore.Mvc": "1.1.2",
+    "Microsoft.AspNetCore.Mvc.Razor": "1.1.2",
+    "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.1.2",
+    "NETStandard.Library": "1.6.1",
     "PhantomNet.AspNetCore.Mvc.DataAnnotations": "1.0.0-*",
     "PhantomNet.Core": "1.0.3-*",
     "PhantomNet.Extensions.Localization": "1.0.0-*"
   },
 
   "frameworks": {
-    "netstandard1.6": {
-      "imports": "dnxcore50"
-    }
+    "netstandard1.6": {}
   }
 }
