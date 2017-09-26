@@ -4,7 +4,7 @@
     <Description>PhantomNet.AspNetCore.Mvc class library</Description>
     <Copyright>Green Grass</Copyright>
     <AssemblyTitle>PhantomNet.AspNetCore.Mvc</AssemblyTitle>
-    <VersionPrefix>1.0.0-beta</VersionPrefix>
+    <VersionPrefix>1.0.3</VersionPrefix>
     <Authors>Minh Nguyen</Authors>
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>PhantomNet.AspNetCore.Mvc</AssemblyName>
@@ -26,7 +26,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="1.1.2" />
     <PackageReference Include="PhantomNet.Core" Version="1.0.3-*" />
-    <PackageReference Include="PhantomNet.Extensions.Localization" Version="1.0.0-*" />
+    <PackageReference Include="PhantomNet.Extensions.Localization" Version="1.0.3-*" />
   </ItemGroup>
 
 </Project>

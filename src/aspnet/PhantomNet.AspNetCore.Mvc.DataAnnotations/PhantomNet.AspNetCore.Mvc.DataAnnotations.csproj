@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <VersionPrefix>1.0.0-beta</VersionPrefix>
+    <VersionPrefix>1.0.3</VersionPrefix>
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>PhantomNet.AspNetCore.Mvc.DataAnnotations</AssemblyName>
     <PackageId>PhantomNet.AspNetCore.Mvc.DataAnnotations</PackageId>
