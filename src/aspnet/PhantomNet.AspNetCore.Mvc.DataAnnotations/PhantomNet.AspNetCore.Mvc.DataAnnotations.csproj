@@ -1,10 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Description>PhantomNet.AspNetCore.Mvc class library</Description>
+    <Copyright>Green Grass</Copyright>
+    <AssemblyTitle>PhantomNet.AspNetCore.Mvc.DataAnnotations</AssemblyTitle>
     <VersionPrefix>1.0.3</VersionPrefix>
+    <Authors>Minh Nguyen</Authors>
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>PhantomNet.AspNetCore.Mvc.DataAnnotations</AssemblyName>
     <PackageId>PhantomNet.AspNetCore.Mvc.DataAnnotations</PackageId>
+    <PackageProjectUrl>https://github.com/green-grass/PhantomNet-Mvc</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/green-grass/PhantomNet-Mvc/blob/master/LICENSE</PackageLicenseUrl>
     <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
