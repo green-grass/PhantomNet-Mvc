@@ -1,28 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E8514AB1-DED2-4CB0-9363-4CEA715256FF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5DC68DB5-6918-4448-89B2-76289C4FFB07}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
 		Build.ps1 = Build.ps1
-		global.json = global.json
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extensions", "extensions", "{5EFF8C73-9CE3-4F45-968C-0DAFFD020186}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.Mvc", "src\PhantomNet.AspNetCore.Mvc\PhantomNet.AspNetCore.Mvc.xproj", "{5CC3279C-7471-49C0-9820-04F3BB79F0EB}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.Mvc.Views", "src\extensions\PhantomNet.AspNetCore.Mvc.Views\PhantomNet.AspNetCore.Mvc.Views.xproj", "{BBD0D73A-46E6-4EA8-AAC1-C245E64453D2}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aspnet", "aspnet", "{0966BBD3-D1CF-493B-AF00-83DF806FD927}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.Mvc.DataAnnotations", "src\aspnet\PhantomNet.AspNetCore.Mvc.DataAnnotations\PhantomNet.AspNetCore.Mvc.DataAnnotations.xproj", "{0532C696-43F7-4BEC-A572-C8218AC7A3D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomNet.AspNetCore.Mvc", "src\PhantomNet.AspNetCore.Mvc\PhantomNet.AspNetCore.Mvc.csproj", "{5CC3279C-7471-49C0-9820-04F3BB79F0EB}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.AspNetCore.Mvc.SharedStrings", "src\PhantomNet.AspNetCore.Mvc.SharedStrings\PhantomNet.AspNetCore.Mvc.SharedStrings.xproj", "{6A528BEC-73AB-4991-A194-4C23AA0556EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomNet.AspNetCore.Mvc.Views", "src\extensions\PhantomNet.AspNetCore.Mvc.Views\PhantomNet.AspNetCore.Mvc.Views.csproj", "{BBD0D73A-46E6-4EA8-AAC1-C245E64453D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomNet.AspNetCore.Mvc.DataAnnotations", "src\aspnet\PhantomNet.AspNetCore.Mvc.DataAnnotations\PhantomNet.AspNetCore.Mvc.DataAnnotations.csproj", "{0532C696-43F7-4BEC-A572-C8218AC7A3D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomNet.AspNetCore.Mvc.SharedStrings", "src\PhantomNet.AspNetCore.Mvc.SharedStrings\PhantomNet.AspNetCore.Mvc.SharedStrings.csproj", "{6A528BEC-73AB-4991-A194-4C23AA0556EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,10 +52,13 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5EFF8C73-9CE3-4F45-968C-0DAFFD020186} = {E8514AB1-DED2-4CB0-9363-4CEA715256FF}
+		{0966BBD3-D1CF-493B-AF00-83DF806FD927} = {E8514AB1-DED2-4CB0-9363-4CEA715256FF}
 		{5CC3279C-7471-49C0-9820-04F3BB79F0EB} = {E8514AB1-DED2-4CB0-9363-4CEA715256FF}
 		{BBD0D73A-46E6-4EA8-AAC1-C245E64453D2} = {5EFF8C73-9CE3-4F45-968C-0DAFFD020186}
-		{0966BBD3-D1CF-493B-AF00-83DF806FD927} = {E8514AB1-DED2-4CB0-9363-4CEA715256FF}
 		{0532C696-43F7-4BEC-A572-C8218AC7A3D5} = {0966BBD3-D1CF-493B-AF00-83DF806FD927}
 		{6A528BEC-73AB-4991-A194-4C23AA0556EA} = {E8514AB1-DED2-4CB0-9363-4CEA715256FF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7213E493-2CD2-46C7-8C16-DAEBA64FF6B2}
 	EndGlobalSection
 EndGlobal
